@@ -20,6 +20,49 @@ NB: the initial goal of this project was to train the bot to play exactly like m
 3. **Train the model:** Run `train_model.py` to train and save the model.
 4. **Play against the bot:** Run `bot_player.py` and follow the prompts.
 
+## Project Structure
+
+```
+Chessbot-me/
+├── README.md
+├── requirements.txt
+├── bot/
+│   └── bot_player.py
+├── data/
+│   ├── build_dataset.py
+│   ├── chess_com_games_2024-10-11.pgn
+│   ├── train_data.npz
+│   └── ...
+├── engine/
+│   ├── stockfish-windows-x86-64-avx2.exe
+│   └── ...
+├── model/
+│   ├── train_model.py
+│   └── chess_model.keras
+├── utils/
+│   ├── encoder.py
+│   ├── featurizer.py
+│   └── pgn_parser.py
+└── ...
+```
+
+- `bot/`: Chess bot logic and gameplay
+- `data/`: PGN files, dataset builder, and training data
+- `engine/`: Stockfish engine and related files
+- `model/`: Model training scripts and saved models
+- `utils/`: Helper modules for encoding, feature extraction, and PGN parsing
+
+## Data Sources
+- Kaggle chess games: [Kaggle Chess PGN Dataset](https://www.kaggle.com/datasets/ironicninja/raw-chess-games-pgn)
+- chess.com games: Your own exported PGN file
+
+## .gitignore
+Add the following lines to your `.gitignore` to avoid uploading large PGN files to GitHub:
+```
+data/chess_com_games_2024-10-11.pgn
+data/lichess_db_standard_rated_2014-10.pgn
+```
+
 ## Limitations
 - The model only predicts moves seen in the training data; rare or creative moves may not be chosen.
 - Training and data processing can be slow and memory-intensive for large PGN files.
