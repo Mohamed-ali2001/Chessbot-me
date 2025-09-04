@@ -56,12 +56,7 @@ Chessbot-me/
 - Kaggle chess games: [Kaggle Chess PGN Dataset](https://www.kaggle.com/datasets/ironicninja/raw-chess-games-pgn)
 - chess.com games: Your own exported PGN file
 
-## .gitignore
-Add the following lines to your `.gitignore` to avoid uploading large PGN files to GitHub:
-```
-data/chess_com_games_2024-10-11.pgn
-data/lichess_db_standard_rated_2014-10.pgn
-```
+
 
 ## Limitations
 - The model only predicts moves seen in the training data; rare or creative moves may not be chosen.
